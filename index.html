@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhyey Patel - Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0a0a0a;
+            --color-surface: #1a1a1a;
+            --color-accent: #d4af37;
+            --color-text: #e8e8e8;
+            --color-text-dim: #9a9a9a;
+            --color-border: #2a2a2a;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0) 100%);
+            backdrop-filter: blur(10px);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--color-text-dim);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 2rem;
+            animation: fadeInUp 1s ease-out 1.1s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--color-text-dim);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .stat {
+            border-left: 2px solid var(--color-accent);
+            padding-left: 2rem;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--color-text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--color-surface);
+            padding: 2.5rem;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-category {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-size: 1rem;
+            color: var(--color-text-dim);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '?';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--color-border);
+        }
+
+        .experience-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -4.4rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 5px var(--color-accent);
+        }
+
+        .experience-period {
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .experience-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-size: 1rem;
+            color: var(--color-text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: var(--color-text-dim);
+            line-height: 1.8;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 3rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--color-accent);
+            transform: translateX(10px);
+        }
+
+        .project-card:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .project-card:nth-child(even) .project-info {
+            order: 2;
+        }
+
+        .project-card:nth-child(even) .project-image {
+            order: 1;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--color-border) 0%, var(--color-surface) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            opacity: 0.2;
+            border: 1px solid var(--color-border);
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--color-text-dim);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--color-text-dim);
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-label {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            min-width: 80px;
+        }
+
+        .contact-value {
+            color: var(--color-text);
+        }
+
+        .contact-value a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-dim);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--color-text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 2rem;
+            }
+
+            .hero {
+                padding: 0 2rem;
+            }
+
+            section {
+                padding: 6rem 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+
+            .project-card:nth-child(even) .project-info {
+                order: 1;
+            }
+
+            .project-card:nth-child(even) .project-image {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-timeline {
+                padding-left: 2rem;
+            }
+
+            .experience-item::before {
+                left: -2.4rem;
+            }
+
+            footer {
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">DP</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Web Developer</div>
+            <h1>
+                Dhyey Patel
+                <span>Web Developer</span>
+                <span>Experiences</span>
+            </h1>
+            <p class="hero-description">
+                Full-stack web developer specializing in WordPress, PHP, and modern web technologies. 
+                Transforming ideas into elegant, functional digital solutions.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header fade-in">
+            <div class="section-label">Introduction</div>
+            <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <p>
+                    I'm a passionate web developer with a Bachelor's degree in Computer Science and Engineering 
+                    from Parul University. My journey in web development has been driven by a desire to create 
+                    impactful digital experiences that solve real-world problems.
+                </p>
+                <p>
+                    Currently working as a Junior Web Developer at SeoWebPlanet, I've had the privilege of 
+                    developing over 15 websites and contributing to diverse projects across various industries. 
+                    My expertise lies in WordPress development, PHP, and creating seamless user experiences.
+                </p>
+                <p>
+                    I believe in continuous learning and staying updated with the latest web technologies to 
+                    deliver innovative solutions that exceed client expectations.
+                </p>
+            </div>
+            <div class="about-stats fade-in">
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Graduate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Dedication</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header fade-in">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Technical Skills</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card fade-in">
+                <div class="skill-category">Frontend</div>
+                
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Responsive Design</li>
+                    <li>UI/UX Implementation</li>
+                </ul>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-category">Backend</div>
+                
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>MySQL</li>
+                    <li>API Integration</li>
+                </ul>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-category">CMS & Tools</div>
+                
+                    <li>WordPress</li>
+                    <li>WooCommerce</li>
+                    <li>Git & Version Control</li>
+                    <li>Payment Gateways</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header fade-in">
+            <div class="section-label">Career</div>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="experience-timeline">
+            <div class="experience-item fade-in">
+                <div class="experience-period">November 2024 - Present</div>
+                <h3 class="experience-title">Junior Web Developer</h3>
+                <div class="experience-company">SeoWebPlanet | Vadodara, Gujarat, India</div>
+                <p class="experience-description">
+                    Working as a full-time employee, developing 15+ websites and gaining hands-on experience 
+                    on real-time projects. Collaborating with clients to deliver custom web solutions that 
+                    meet their business objectives and enhance their online presence.
+                </p>
+            </div>
+            <div class="experience-item fade-in">
+                <div class="experience-period">May 2024 - October 2024</div>
+                <h3 class="experience-title">Trainee</h3>
+                <div class="experience-company">Adept Digitals | Vadodara, Gujarat, India</div>
+                <p class="experience-description">
+                    Worked as a trainee and got the opportunity to work on real-time projects, along with 
+                    contributing to the company's official website. Gained valuable experience in client 
+                    communication and project management.
+                </p>
+            </div>
+            <div class="experience-item fade-in">
+                <div class="experience-period">December 2023 - March 2024</div>
+                <h3 class="experience-title">Internship</h3>
+                <div class="experience-company">SNT SOLUTIONS | Vadodara</div>
+                <p class="experience-description">
+                    3 Months internship focused on WordPress development. Learned industry best practices 
+                    and gained practical experience in building and customizing WordPress websites.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header fade-in">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Featured Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-info">
+                    <h3 class="project-title">Krisia</h3>
+                    <p class="project-description">
+                        Developed a comprehensive WordPress e-commerce website for Krisia, an Australia-based 
+                        women's fashion brand. Implemented WooCommerce with Stripe payment gateway integration 
+                        for secure online product management and sales, ensuring a seamless shopping experience.
+                    </p>
+                    <a href="https://www.krisia.com.au/" target="_blank" class="project-link">
+                        Visit Website ?
+                    </a>
+                </div>
+                <div class="project-image">K</div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-info">
+                    <h3 class="project-title">GardenGold</h3>
+                    <p class="project-description">
+                        Designed and built the 'GardenGold' WordPress website for Vermi-Compost, including 
+                        custom application features to enhance user interaction and streamline content management. 
+                        Created an intuitive interface for organic gardening enthusiasts.
+                    </p>
+                    <a href="https://www.vermi-compost.com/" target="_blank" class="project-link">
+                        Visit Website ?
+                    </a>
+                </div>
+                <div class="project-image">GG</div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-info">
+                    <h3 class="project-title">Auraplace</h3>
+                    <p class="project-description">
+                        Developed the Auraplace website using WordPress for a child and youth-focused organization. 
+                        Effectively presented programs on self-awareness, emotional regulation, social-emotional 
+                        learning (SEL), and inclusive education with an engaging and accessible design.
+                    </p>
+                    <a href="https://www.auraplace.org/" target="_blank" class="project-link">
+                        Visit Website ?
+                    </a>
+                </div>
+                <div class="project-image">A</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header fade-in">
+            <div class="section-label">Get in Touch</div>
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info fade-in">
+                <p>
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be 
+                    part of your visions. Feel free to reach out through any of the channels below.
+                </p>
+                <p>
+                    Whether you need a new website, want to improve your existing one, or just want to 
+                    say hello, I'd love to hear from you.
+                </p>
+            </div>
+            <div class="fade-in">
+                <ul class="contact-details">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">
+                            <a href="mailto:dhyeypatel1992@gmail.com">dhyeypatel1992@gmail.com</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">
+                            <a href="tel:+916352314211">+91 63523 14211</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Lunawada, Mahisagar, Gujarat</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">
+                            <a href="https://linkedin.com/in/dhyey-patel-a1b688217" target="_blank">
+                                dhyey-patel-a1b688217
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/dhyey-patel-a1b688217" target="_blank">LinkedIn</a>
+            <a href="mailto:dhyeypatel1992@gmail.com">Email</a>
+            <a href="tel:+916352314211">Phone</a>
+        </div>
+        <p>&copy; 2026 Dhyey Patel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
