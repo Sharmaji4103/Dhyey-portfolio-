@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Dinkal Shah â€” Digital Marketing Consultant</title>
+<title>Dinkal Shah &#8211; Digital Marketing Consultant</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,11 +42,11 @@
   .btn-primary:hover { background: #e0b000; transform: translateY(-1px); }
   .btn-outline { background: transparent; color: var(--black); border: 2px solid var(--black); padding: 9px 22px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background .2s, color .2s; display: inline-block; }
   .btn-outline:hover { background: var(--black); color: var(--white); }
-  .hero-photo { width: 42%; flex-shrink: 0; background: var(--gray); position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
-  .hero-photo-placeholder { width: 100%; height: 100%; background: linear-gradient(160deg, #d9d9d9 0%, #b0b0b0 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
-  .hero-photo-placeholder span { font-family: 'Bebas Neue', sans-serif; font-size: 90px; color: rgba(255,255,255,.5); line-height: 1; }
-  .hero-photo-placeholder small { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,.35); }
+  .hero-photo { width: 42%; background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .hero-img { width: 100%; height: 100%; object-fit: contain; object-position: center; animation: zoomIn 1.2s ease; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to left, rgba(0,0,0,0.35), transparent); }
   .hero-photo-accent { position: absolute; bottom: 0; left: 0; width: 100%; height: 8px; background: var(--yellow); }
+  @keyframes zoomIn { from { transform: scale(1.1); opacity: 0; } to { transform: scale(1); opacity: 1; } }
   .section-body { flex: 1; padding: 50px 50px 50px 44px; overflow: hidden; }
   .section-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 6vw, 72px); letter-spacing: 2px; line-height: 1; color: var(--black); margin-bottom: 6px; }
   .section-sub { font-size: 13px; color: #666; margin-bottom: 30px; font-weight: 400; }
@@ -80,7 +80,7 @@
   .tl-company { font-size: 12px; color: var(--dark-gray); margin-bottom: 10px; font-style: italic; }
   .tl-bullets { list-style: none; }
   .tl-bullets li { font-size: 12px; color: #555; padding: 3px 0; padding-left: 14px; position: relative; line-height: 1.5; }
-  .tl-bullets li::before { content: 'â–¸'; position: absolute; left: 0; color: var(--yellow); font-size: 10px; top: 4px; }
+  .tl-bullets li::before { content: '\25B8'; position: absolute; left: 0; color: var(--yellow); font-size: 10px; top: 4px; }
   .skills-wrap { display: flex; gap: 30px; flex-wrap: wrap; }
   .skill-bar-item { margin-bottom: 14px; min-width: 220px; flex: 1; }
   .skill-bar-item label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
@@ -137,7 +137,6 @@
   footer { background: var(--black); color: #555; text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 18px; margin-right: var(--rail-w); }
   footer span { color: var(--yellow); }
 
-  /* â”€â”€ YELLOW THEME SECTIONS (replacing dark blue) â”€â”€ */
   .yellow-section {
     background: var(--white);
     margin-right: 0;
@@ -153,114 +152,36 @@
     width: 5px; height: 100%;
     background: var(--black);
   }
-  .ys-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--dark-gray);
-    margin-bottom: 10px;
-  }
-  .ys-heading {
-    font-family: 'DM Sans', sans-serif;
-    font-size: clamp(20px, 3vw, 30px);
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: 6px;
-    line-height: 1.25;
-  }
-  .ys-divider {
-    width: 100%;
-    height: 2px;
-    background: var(--yellow);
-    margin: 18px 0 30px;
-  }
+  .ys-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--dark-gray); margin-bottom: 10px; }
+  .ys-heading { font-family: 'DM Sans', sans-serif; font-size: clamp(20px, 3vw, 30px); font-weight: 700; color: var(--black); margin-bottom: 6px; line-height: 1.25; }
+  .ys-divider { width: 100%; height: 2px; background: var(--yellow); margin: 18px 0 30px; }
 
-  /* Results at a Glance â€” yellow theme */
-  .results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    background: #e0e0e0;
-  }
-  .result-card {
-    background: var(--white);
-    padding: 28px 28px 22px;
-    border-left: 4px solid transparent;
-    transition: border-color .25s, background .2s;
-    position: relative;
-  }
+  .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #e0e0e0; }
+  .result-card { background: var(--white); padding: 28px 28px 22px; border-left: 4px solid transparent; transition: border-color .25s, background .2s; position: relative; }
   .result-card.accent-yellow { border-left-color: var(--yellow); }
   .result-card.accent-black { border-left-color: var(--black); }
   .result-card:hover { background: var(--gray); }
-  .result-card .rval {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 6vw, 72px);
-    line-height: 1;
-    margin-bottom: 10px;
-  }
+  .result-card .rval { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 6vw, 72px); line-height: 1; margin-bottom: 10px; }
   .result-card.accent-yellow .rval { color: var(--yellow); -webkit-text-stroke: 1px var(--black); }
   .result-card.accent-black .rval { color: var(--black); }
   .result-card .rtitle { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
   .result-card .rsub { font-size: 12px; color: var(--dark-gray); }
 
-  /* SEO Performance yellow */
-  .seo-perf-info {
-    background: var(--gray);
-    border: 1px solid #e0e0e0;
-    border-left: 4px solid var(--yellow);
-    padding: 12px 20px;
-    font-size: 12px;
-    color: #555;
-    font-style: italic;
-    margin-bottom: 20px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .seo-perf-info span::before { content: 'â€¢ '; color: var(--yellow); }
-  .seo-kw-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    background: #e0e0e0;
-    margin-bottom: 50px;
-  }
-  .seo-kw-card {
-    background: var(--white);
-    padding: 20px 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-left: 4px solid transparent;
-    transition: border-color .2s, background .2s;
-  }
+  .seo-perf-info { background: var(--gray); border: 1px solid #e0e0e0; border-left: 4px solid var(--yellow); padding: 12px 20px; font-size: 12px; color: #555; font-style: italic; margin-bottom: 20px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .seo-perf-info span::before { content: '\2022 '; color: var(--yellow); }
+  .seo-kw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #e0e0e0; margin-bottom: 50px; }
+  .seo-kw-card { background: var(--white); padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid transparent; transition: border-color .2s, background .2s; }
   .seo-kw-card:hover { background: var(--gray); }
   .seo-kw-card.border-yellow { border-left-color: var(--yellow); }
   .seo-kw-card.border-black { border-left-color: var(--black); }
   .seo-kw-card .kw-text { font-size: 14px; font-weight: 600; color: var(--black); }
   .seo-kw-card .kw-sub { font-size: 11px; color: var(--dark-gray); margin-top: 4px; }
-  .seo-kw-card .kw-rank {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    line-height: 1;
-  }
+  .seo-kw-card .kw-rank { font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1; }
   .seo-kw-card.border-yellow .kw-rank { color: var(--yellow); -webkit-text-stroke: 1px var(--black); }
   .seo-kw-card.border-black .kw-rank { color: var(--black); }
 
-  /* Traffic Growth yellow */
-  .traffic-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
-    background: #e0e0e0;
-    margin-bottom: 24px;
-  }
-  .traffic-stat {
-    background: var(--white);
-    padding: 20px 18px;
-    border-top: 4px solid transparent;
-  }
+  .traffic-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background: #e0e0e0; margin-bottom: 24px; }
+  .traffic-stat { background: var(--white); padding: 20px 18px; border-top: 4px solid transparent; }
   .traffic-stat:nth-child(odd) { border-top-color: var(--yellow); }
   .traffic-stat:nth-child(even) { border-top-color: var(--black); }
   .traffic-stat .tval { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; margin-bottom: 4px; color: var(--black); }
@@ -296,97 +217,49 @@
     .ads-metrics { grid-template-columns: 1fr 1fr; }
     .traffic-stats { grid-template-columns: 1fr 1fr; }
   }
-  
- .hero-photo {
-  width: 42%;
-  background: #ffffff; /* FIXED */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;  /* full image */
-  object-position: center;
-}
-
-/* Dark overlay for premium look */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to left, rgba(0,0,0,0.35), transparent);
-}
-
-/* Smooth animation */
-.hero-img {
-  animation: zoomIn 1.2s ease;
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(1.1);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 </style>
 </head>
 <body>
 
+<!-- RIGHT RAIL NAV -->
 <div class="rail">
-  <a href="#home" title="Home">ðŸ </a>
-  <a href="#about" title="About">ðŸ‘¤</a>
-  <a href="#services" title="Services">âš™ï¸</a>
-  <a href="#experience" title="Experience">ðŸ’¼</a>
-  <a href="#skills" title="Skills">ðŸ“Š</a>
-  <a href="#projects" title="Projects">ðŸ—‚ï¸</a>
-  <a href="#contact" title="Contact">âœ‰ï¸</a>
+  <a href="#home" title="Home">&#127968;</a>
+  <a href="#about" title="About">&#128100;</a>
+  <a href="#services" title="Services">&#9881;&#65039;</a>
+  <a href="#experience" title="Experience">&#128188;</a>
+  <a href="#skills" title="Skills">&#128202;</a>
+  <a href="#projects" title="Projects">&#128193;</a>
+  <a href="#contact" title="Contact">&#9993;&#65039;</a>
 </div>
 
 <div class="page">
 
   <!-- HERO -->
   <section id="home" class="section-card" style="min-height:100vh;">
-  
-  <!-- LEFT CONTENT -->
-  <div class="hero-content">
-    <div class="hero-tag">Digital Marketing Consultant</div>
-    <div class="hero-hi">HI THERE!</div>
-    <div class="hero-name">I'M DINKAL</div>
-
-    <div class="hero-role-pill">
-      SEO · Social Media · Google & Meta Ads
+    <div class="hero-content">
+      <div class="hero-tag">Digital Marketing Consultant</div>
+      <div class="hero-hi">HI THERE!</div>
+      <div class="hero-name">I'M DINKAL</div>
+      <div class="hero-role-pill">SEO &middot; Social Media &middot; Google &amp; Meta Ads</div>
+      <p class="hero-bio">
+        I help businesses increase online visibility, generate high-quality leads, and improve ROI through data-driven digital strategies &mdash; including up to
+        <strong>120% growth in website traffic</strong>.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Case Studies</a>
+        <a href="#contact" class="btn-outline">Book Free Consultation</a>
+      </div>
     </div>
-
-    <p class="hero-bio">
-      I help businesses increase online visibility, generate high-quality leads, and improve ROI through data-driven digital strategies — including up to 
-      <strong>120% growth in website traffic</strong>.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#projects" class="btn-primary">View Case Studies</a>
-      <a href="#contact" class="btn-outline">Book Free Consultation</a>
+    <div class="hero-photo">
+      <img
+        src="https://raw.githubusercontent.com/Sharmaji4103/Dhyey-portfolio-/main/Dinkal.jpeg"
+        alt="Dinkal Shah"
+        class="hero-img"
+      >
+      <div class="hero-overlay"></div>
+      <div class="hero-photo-accent"></div>
     </div>
-  </div>
-
-  <!-- RIGHT IMAGE -->
-  <div class="hero-photo">
-    <img 
-      src="https://raw.githubusercontent.com/Sharmaji4103/Dhyey-portfolio-/main/Dinkal.jpeg" 
-      alt="Dinkal Shah" 
-      class="hero-img"
-    >
-    <div class="hero-overlay"></div>
-    <div class="hero-photo-accent"></div>
-  </div>
-
-</section>
+  </section>
 
   <!-- ABOUT -->
   <section id="about" class="section-card">
@@ -409,7 +282,7 @@
       </div>
       <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start;">
         <div class="reveal" style="flex:1;min-width:260px;">
-          <p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:20px;">I specialize in SEO, Social Media Marketing, and performance-driven advertising. My approach is rooted in data â€” every strategy I build is designed to deliver measurable, scalable results for the businesses I work with.</p>
+          <p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:20px;">I specialize in SEO, Social Media Marketing, and performance-driven advertising. My approach is rooted in data &mdash; every strategy I build is designed to deliver measurable, scalable results for the businesses I work with.</p>
           <div class="stats-grid">
             <div class="stat-cell"><span class="num">3+</span><span class="lbl">Companies Worked</span></div>
             <div class="stat-cell"><span class="num">120%</span><span class="lbl">Traffic Growth</span></div>
@@ -420,10 +293,10 @@
         <div class="reveal" style="flex:1;min-width:240px;">
           <div class="what-i-do">
             <h4>What I Do?</h4>
-            <div class="what-item"><div class="what-icon">ðŸ”</div><p><strong>SEO Strategy</strong>End-to-end on-page, off-page & technical SEO to boost organic rankings.</p></div>
-            <div class="what-item"><div class="what-icon">ðŸ“±</div><p><strong>Social Media Marketing</strong>Content strategy & community management across all major platforms.</p></div>
-            <div class="what-item"><div class="what-icon">ðŸ“£</div><p><strong>Paid Advertising</strong>Google & Meta ad campaigns focused on ROI and cost-efficient conversions.</p></div>
-            <div class="what-item"><div class="what-icon">âœï¸</div><p><strong>Content Writing</strong>SEO-optimized copy, blogs, and ad creatives that convert visitors.</p></div>
+            <div class="what-item"><div class="what-icon">&#128269;</div><p><strong>SEO Strategy</strong>End-to-end on-page, off-page &amp; technical SEO to boost organic rankings.</p></div>
+            <div class="what-item"><div class="what-icon">&#128241;</div><p><strong>Social Media Marketing</strong>Content strategy &amp; community management across all major platforms.</p></div>
+            <div class="what-item"><div class="what-icon">&#128227;</div><p><strong>Paid Advertising</strong>Google &amp; Meta ad campaigns focused on ROI and cost-efficient conversions.</p></div>
+            <div class="what-item"><div class="what-icon">&#9997;&#65039;</div><p><strong>Content Writing</strong>SEO-optimized copy, blogs, and ad creatives that convert visitors.</p></div>
           </div>
         </div>
       </div>
@@ -450,10 +323,10 @@
         <p class="section-sub">What I offer to grow your business online</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal"><div class="service-icon">ðŸ“±</div><h3>Social Media Marketing</h3><p>Strategic social media campaigns to build brand awareness, increase engagement, and generate leads. From content planning to performance tracking across Instagram, Facebook, and LinkedIn.</p></div>
-        <div class="service-card reveal"><div class="service-icon">ðŸ”</div><h3>SEO</h3><p>End-to-end SEO solutions including keyword research, competitor analysis, technical audits, on-page optimization, and off-page strategies to drive organic traffic and improve rankings.</p></div>
-        <div class="service-card reveal"><div class="service-icon">ðŸ“£</div><h3>Google & Meta Ads</h3><p>Performance-driven ad campaigns on Google Ads and Meta (Facebook & Instagram). Audience targeting to continuous optimization â€” maximizing ROI and reducing cost per lead.</p></div>
-        <div class="service-card reveal"><div class="service-icon">âœï¸</div><h3>Content Writing</h3><p>SEO-optimized and engaging content including website copy, blogs, and ad creatives. Strategies designed to attract the right audience and convert visitors into customers.</p></div>
+        <div class="service-card reveal"><div class="service-icon">&#128241;</div><h3>Social Media Marketing</h3><p>Strategic social media campaigns to build brand awareness, increase engagement, and generate leads. From content planning to performance tracking across Instagram, Facebook, and LinkedIn.</p></div>
+        <div class="service-card reveal"><div class="service-icon">&#128269;</div><h3>SEO</h3><p>End-to-end SEO solutions including keyword research, competitor analysis, technical audits, on-page optimization, and off-page strategies to drive organic traffic and improve rankings.</p></div>
+        <div class="service-card reveal"><div class="service-icon">&#128227;</div><h3>Google &amp; Meta Ads</h3><p>Performance-driven ad campaigns on Google Ads and Meta (Facebook &amp; Instagram). Audience targeting to continuous optimization &mdash; maximizing ROI and reducing cost per lead.</p></div>
+        <div class="service-card reveal"><div class="service-icon">&#9997;&#65039;</div><h3>Content Writing</h3><p>SEO-optimized and engaging content including website copy, blogs, and ad creatives. Strategies designed to attract the right audience and convert visitors into customers.</p></div>
       </div>
     </div>
   </section>
@@ -481,13 +354,13 @@
         <div class="timeline-item reveal">
           <div class="timeline-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="timeline-content">
-            <div class="tl-period">Nov 2025 â€“ Present</div>
+            <div class="tl-period">Nov 2025 &ndash; Present</div>
             <div class="tl-title">Digital Marketing Executive</div>
             <div class="tl-company">SEO Web Planet Solution, Vadodara</div>
             <ul class="tl-bullets">
               <li>Executed end-to-end SEO strategies (On-Page, Off-Page, Technical)</li>
               <li>Increased organic traffic by 30%+ across multiple projects</li>
-              <li>Conducted keyword research & competitor analysis for growth opportunities</li>
+              <li>Conducted keyword research &amp; competitor analysis for growth opportunities</li>
               <li>Optimized meta tags, internal linking, and content for better rankings</li>
               <li>Managed Google Business Profile, improving local visibility and leads</li>
               <li>Created SEO blogs and content calendars for consistent traffic growth</li>
@@ -497,7 +370,7 @@
         <div class="timeline-item reveal">
           <div class="timeline-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="timeline-content">
-            <div class="tl-period">Jun 2025 â€“ Oct 2025</div>
+            <div class="tl-period">Jun 2025 &ndash; Oct 2025</div>
             <div class="tl-title">Social Media Executive</div>
             <div class="tl-company">Namah Softech Pvt. Ltd, Vadodara</div>
             <ul class="tl-bullets">
@@ -512,7 +385,7 @@
         <div class="timeline-item reveal">
           <div class="timeline-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
           <div class="timeline-content">
-            <div class="tl-period">Jan 2025 â€“ May 2025</div>
+            <div class="tl-period">Jan 2025 &ndash; May 2025</div>
             <div class="tl-title">Digital Marketing Executive</div>
             <div class="tl-company">Tapitt (Remote)</div>
             <ul class="tl-bullets">
@@ -528,7 +401,7 @@
         <div class="project-section-title">Education</div>
         <div class="edu-card">
           <div class="cgpa">8.16<span style="font-size:24px;color:#aaa;">/10</span></div>
-          <h3>Bachelor of Business Administration (BBA) â€“ Marketing</h3>
+          <h3>Bachelor of Business Administration (BBA) &ndash; Marketing</h3>
           <p>IIIM, Charotar University of Science and Technology, Anand<br/>Graduated: May 2025</p>
         </div>
       </div>
@@ -566,7 +439,7 @@
         </div>
         <div style="flex:1;min-width:220px;" class="reveal">
           <div style="margin-bottom:16px;">
-            <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dark-gray);margin-bottom:12px;">Tools & Platforms</p>
+            <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dark-gray);margin-bottom:12px;">Tools &amp; Platforms</p>
             <div class="tools-grid">
               <div class="tool-chip">Google Analytics</div>
               <div class="tool-chip">Search Console</div>
@@ -600,35 +473,35 @@
     <div class="section-body">
       <div class="reveal">
         <div class="section-heading">PORTFOLIO</div>
-        <p class="section-sub">Featured projects & real-world results</p>
+        <p class="section-sub">Featured projects &amp; real-world results</p>
       </div>
       <div class="project-section-title reveal">Social Media Management</div>
       <div class="smm-grid reveal">
         <div class="smm-card">
-          <div class="smm-icon">ðŸ­</div>
+          <div class="smm-icon">&#127981;</div>
           <h4>Best Value Chem Pvt. Ltd.</h4>
           <div class="smm-niche">Chemical Manufacturing</div>
           <p>Managed LinkedIn presence focusing on brand-aligned B2B content and consistent engagement to strengthen digital presence.</p>
-          <a href="https://www.linkedin.com/company/best-value-chem-pvt-ltd/" target="_blank">View Profile â†’</a>
+          <a href="https://www.linkedin.com/company/best-value-chem-pvt-ltd/" target="_blank">View Profile &rarr;</a>
         </div>
         <div class="smm-card">
-          <div class="smm-icon">ðŸ’»</div>
+          <div class="smm-icon">&#128187;</div>
           <h4>Proses India</h4>
-          <div class="smm-niche">IT & Software Solutions</div>
-          <p>Social media strategy around AI, automation & digital solutions content to improve brand visibility and engagement.</p>
-          <a href="https://in.linkedin.com/company/proses-india" target="_blank">View Profile â†’</a>
+          <div class="smm-niche">IT &amp; Software Solutions</div>
+          <p>Social media strategy around AI, automation &amp; digital solutions content to improve brand visibility and engagement.</p>
+          <a href="https://in.linkedin.com/company/proses-india" target="_blank">View Profile &rarr;</a>
         </div>
         <div class="smm-card" style="background:var(--yellow);">
-          <div class="smm-icon" style="background:var(--black);">ðŸ“ˆ</div>
+          <div class="smm-icon" style="background:var(--black);">&#128200;</div>
           <h4 style="color:var(--black);">LinkedIn Growth</h4>
           <div class="smm-niche" style="color:rgba(0,0,0,.5);">Across Managed Pages</div>
           <p style="color:rgba(0,0,0,.7);">Generated <strong>400+</strong> new followers and <strong>35%</strong> engagement boost across managed LinkedIn pages within months.</p>
         </div>
       </div>
-      <div class="project-section-title reveal">SEO Performance â€” Google Rankings</div>
+      <div class="project-section-title reveal">SEO Performance &ndash; Google Rankings</div>
       <div class="seo-grids reveal">
         <div class="seo-block">
-          <h4>Mobile App â€” Wardrobe</h4>
+          <h4>Mobile App &ndash; Wardrobe</h4>
           <div class="rank-row"><span class="rank-kw">best digital wardrobe 2026</span><span class="rank-badge p1">#2 Page 1</span></div>
           <div class="rank-row"><span class="rank-kw">digitized wardrobe management</span><span class="rank-badge p1">#4 Page 1</span></div>
           <div class="rank-row"><span class="rank-kw">digital wardrobe app</span><span class="rank-badge p2">#12 Page 2</span></div>
@@ -644,34 +517,34 @@
       <div class="project-section-title reveal">Paid Advertising Case Studies</div>
       <div class="ads-grid reveal">
         <div class="ads-card">
-          <div class="platform">ðŸ”µ Google Ads â€” App Install Campaign</div>
+          <div class="platform">&#128309; Google Ads &ndash; App Install Campaign</div>
           <h3>App Install Campaign</h3>
-          <p class="obj">Drive maximum app installs at a low cost using targeted Google Ads campaigns optimized for Android & iOS users with video-based creatives.</p>
+          <p class="obj">Drive maximum app installs at a low cost using targeted Google Ads campaigns optimized for Android &amp; iOS users with video-based creatives.</p>
           <div class="ads-metrics">
             <div class="metric-box"><div class="mval">19,632+</div><div class="mlbl">Total Installs</div></div>
-            <div class="metric-box"><div class="mval">â‚¹5.73</div><div class="mlbl">Avg Cost/Install</div></div>
+            <div class="metric-box"><div class="mval">&#8377;5.73</div><div class="mlbl">Avg Cost/Install</div></div>
             <div class="metric-box"><div class="mval">12,308</div><div class="mlbl">Top Campaign Installs</div></div>
             <div class="metric-box"><div class="mval">12.53%</div><div class="mlbl">Best Conversion Rate</div></div>
           </div>
-          <p style="font-size:11px;margin-top:10px;color:#666;">Top performing campaign: <strong>12,308 installs at just â‚¹4.03 CPI</strong></p>
+          <p style="font-size:11px;margin-top:10px;color:#666;">Top performing campaign: <strong>12,308 installs at just &#8377;4.03 CPI</strong></p>
         </div>
         <div class="ads-card">
-          <div class="platform">ðŸŸ£ Meta Ads â€” App Install Campaign</div>
+          <div class="platform">&#128995; Meta Ads &ndash; App Install Campaign</div>
           <h3>App Install Campaign</h3>
-          <p class="obj">Drive mobile app installs and maximize reach using Meta Ads (Facebook & Instagram) with video creatives and targeted audience optimization.</p>
+          <p class="obj">Drive mobile app installs and maximize reach using Meta Ads (Facebook &amp; Instagram) with video creatives and targeted audience optimization.</p>
           <div class="ads-metrics">
             <div class="metric-box"><div class="mval">6,000+</div><div class="mlbl">Total Installs</div></div>
             <div class="metric-box"><div class="mval">1M+</div><div class="mlbl">Total Reach</div></div>
             <div class="metric-box"><div class="mval">2.3M+</div><div class="mlbl">Total Impressions</div></div>
-            <div class="metric-box"><div class="mval">â‚¹6.09</div><div class="mlbl">Cost/Install</div></div>
+            <div class="metric-box"><div class="mval">&#8377;6.09</div><div class="mlbl">Cost/Install</div></div>
           </div>
-          <p style="font-size:11px;margin-top:10px;color:#666;">Total clicks: <strong>13,000+</strong> with high reach & engagement at cost-efficient CPI</p>
+          <p style="font-size:11px;margin-top:10px;color:#666;">Total clicks: <strong>13,000+</strong> with high reach &amp; engagement at cost-efficient CPI</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- â•â• RESULTS AT A GLANCE â€” YELLOW THEME â•â• -->
+  <!-- RESULTS AT A GLANCE -->
   <section id="results" class="yellow-section reveal" style="margin-right:var(--rail-w);">
     <div class="ys-label">Results at a Glance</div>
     <div class="ys-heading">Numbers that speak for themselves.</div>
@@ -690,7 +563,7 @@
       <div class="result-card accent-yellow reveal">
         <div class="rval">7%</div>
         <div class="rtitle">Average Click-Through Rate</div>
-        <div class="rsub">vs. 2â€“3% industry benchmark</div>
+        <div class="rsub">vs. 2&ndash;3% industry benchmark</div>
       </div>
       <div class="result-card accent-black reveal">
         <div class="rval">305%</div>
@@ -700,12 +573,11 @@
     </div>
   </section>
 
-  <!-- â•â• SEO PERF + TRAFFIC GROWTH â€” YELLOW THEME â•â• -->
+  <!-- SEO PERFORMANCE + TRAFFIC GROWTH -->
   <section id="seo-traffic" style="margin-right:var(--rail-w);background:#F4F4F4;">
-    <!-- SEO Performance -->
     <div class="yellow-section" style="margin-right:0;border-bottom:3px solid #e0e0e0;">
       <div class="ys-label">SEO Performance</div>
-      <div class="ys-heading">Page 1 Google Rankings for an IT Client â€” Tracy &amp; Livermore, California</div>
+      <div class="ys-heading">Page 1 Google Rankings for an IT Client &ndash; Tracy &amp; Livermore, California</div>
       <div class="ys-divider"></div>
       <div class="seo-perf-info reveal">
         <span>International Client</span>
@@ -715,27 +587,27 @@
       </div>
       <div class="seo-kw-grid reveal">
         <div class="seo-kw-card border-yellow">
-          <div><div class="kw-text">IT Managed Service Provider â€” Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div><div class="kw-text">IT Managed Service Provider &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
           <div class="kw-rank">#2</div>
         </div>
         <div class="seo-kw-card border-black">
-          <div><div class="kw-text">IT Support â€” Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div><div class="kw-text">IT Support &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
           <div class="kw-rank">#1</div>
         </div>
         <div class="seo-kw-card border-yellow">
-          <div><div class="kw-text">Managed IT Services â€” Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div><div class="kw-text">Managed IT Services &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
           <div class="kw-rank">#2</div>
         </div>
         <div class="seo-kw-card border-yellow">
-          <div><div class="kw-text">Managed IT Support â€” Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div><div class="kw-text">Managed IT Support &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
           <div class="kw-rank">#2</div>
         </div>
         <div class="seo-kw-card border-black">
-          <div><div class="kw-text">IT Services â€” Livermore</div><div class="kw-sub">Google Page 1</div></div>
+          <div><div class="kw-text">IT Services &ndash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
           <div class="kw-rank">#1</div>
         </div>
         <div class="seo-kw-card border-black">
-          <div><div class="kw-text">IT Support Services â€” Livermore</div><div class="kw-sub">Google Page 1</div></div>
+          <div><div class="kw-text">IT Support Services &ndash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
           <div class="kw-rank">#1</div>
         </div>
       </div>
@@ -744,7 +616,7 @@
     <!-- Website Traffic Growth -->
     <div class="yellow-section" style="margin-right:0;">
       <div class="ys-label">Website Traffic Growth</div>
-      <div class="ys-heading">Google Analytics â€” Campaign Performance Snapshot</div>
+      <div class="ys-heading">Google Analytics &ndash; Campaign Performance Snapshot</div>
       <div class="ys-divider"></div>
       <div class="traffic-stats reveal">
         <div class="traffic-stat">
@@ -800,14 +672,14 @@
       <div class="contact-grid">
         <div class="contact-info reveal">
           <p>Ready to boost your online presence? I'd love to hear about your business goals and discuss how I can help you achieve them through smart digital marketing strategies.</p>
-          <div class="contact-detail"><div class="cd-icon">ðŸ“</div><div class="cd-text"><small>Location</small><span>Vadodara, Gujarat, India</span></div></div>
-          <div class="contact-detail"><div class="cd-icon">ðŸŽ“</div><div class="cd-text"><small>Education</small><span>BBA Marketing â€” CHARUSAT, Anand</span></div></div>
-          <div class="contact-detail"><div class="cd-icon">ðŸ’¼</div><div class="cd-text"><small>Current Role</small><span>Digital Marketing Executive @ SEO Web Planet</span></div></div>
-          <div class="contact-detail"><div class="cd-icon">ðŸ”—</div><div class="cd-text"><small>LinkedIn</small><span>linkedin.com/in/dinkalshah</span></div></div>
+          <div class="contact-detail"><div class="cd-icon">&#128205;</div><div class="cd-text"><small>Location</small><span>Vadodara, Gujarat, India</span></div></div>
+          <div class="contact-detail"><div class="cd-icon">&#127891;</div><div class="cd-text"><small>Education</small><span>BBA Marketing &ndash; CHARUSAT, Anand</span></div></div>
+          <div class="contact-detail"><div class="cd-icon">&#128188;</div><div class="cd-text"><small>Current Role</small><span>Digital Marketing Executive @ SEO Web Planet</span></div></div>
+          <div class="contact-detail"><div class="cd-icon">&#128279;</div><div class="cd-text"><small>LinkedIn</small><span>linkedin.com/in/dinkalshah</span></div></div>
         </div>
         <div class="contact-cta reveal">
           <h3>BOOK A FREE CONSULTATION</h3>
-          <p>Whether you need SEO, social media management, paid ads, or a complete digital strategy â€” let's have a conversation and see how I can help your brand grow.</p>
+          <p>Whether you need SEO, social media management, paid ads, or a complete digital strategy &mdash; let's have a conversation and see how I can help your brand grow.</p>
           <a href="mailto:dinkal@example.com" class="btn-primary" style="align-self:flex-start;">Get In Touch</a>
         </div>
       </div>
@@ -816,7 +688,7 @@
 
 </div>
 
-<footer>Â© 2026 <span>Dinkal Shah</span> Â· Digital Marketing Consultant Â· All Rights Reserved</footer>
+<footer>&copy; 2026 <span>Dinkal Shah</span> &middot; Digital Marketing Consultant &middot; All Rights Reserved</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
