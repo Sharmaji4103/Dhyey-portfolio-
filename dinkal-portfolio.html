@@ -296,6 +296,45 @@
     .ads-metrics { grid-template-columns: 1fr 1fr; }
     .traffic-stats { grid-template-columns: 1fr 1fr; }
   }
+  
+ .hero-photo {
+  width: 42%;
+  background: #ffffff; /* FIXED */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* full image */
+  object-position: center;
+}
+
+/* Dark overlay for premium look */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.35), transparent);
+}
+
+/* Smooth animation */
+.hero-img {
+  animation: zoomIn 1.2s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 </style>
 </head>
 <body>
@@ -314,25 +353,40 @@
 
   <!-- HERO -->
   <section id="home" class="section-card" style="min-height:100vh;">
-    <div class="hero-content">
-      <div class="hero-tag">Digital Marketing Consultant</div>
-      <div class="hero-hi">HI THERE!</div>
-      <div class="hero-name">I'M DINKAL</div>
-      <div class="hero-role-pill">SEO Â· Social Media Â· Google & Meta Ads</div>
-      <p class="hero-bio">I help businesses increase online visibility, generate high-quality leads, and improve ROI through data-driven digital strategies â€” including up to <strong>120% growth in website traffic</strong>.</p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn-primary">View Case Studies</a>
-        <a href="#contact" class="btn-outline">Book Free Consultation</a>
-      </div>
+  
+  <!-- LEFT CONTENT -->
+  <div class="hero-content">
+    <div class="hero-tag">Digital Marketing Consultant</div>
+    <div class="hero-hi">HI THERE!</div>
+    <div class="hero-name">I'M DINKAL</div>
+
+    <div class="hero-role-pill">
+      SEO · Social Media · Google & Meta Ads
     </div>
-    <div class="hero-photo">
-      <div class="hero-photo-placeholder">
-        <span>DS</span>
-        <small>Dinkal Shah</small>
-      </div>
-      <div class="hero-photo-accent"></div>
+
+    <p class="hero-bio">
+      I help businesses increase online visibility, generate high-quality leads, and improve ROI through data-driven digital strategies — including up to 
+      <strong>120% growth in website traffic</strong>.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">View Case Studies</a>
+      <a href="#contact" class="btn-outline">Book Free Consultation</a>
     </div>
-  </section>
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="hero-photo">
+    <img 
+      src="https://raw.githubusercontent.com/Sharmaji4103/Dhyey-portfolio-/main/Dinkal.jpeg" 
+      alt="Dinkal Shah" 
+      class="hero-img"
+    >
+    <div class="hero-overlay"></div>
+    <div class="hero-photo-accent"></div>
+  </div>
+
+</section>
 
   <!-- ABOUT -->
   <section id="about" class="section-card">
