@@ -704,6 +704,172 @@
     .hero-photo { display: none; }
     .ads-metrics { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ── DARK SECTIONS ── */
+  .dark-section {
+    background: #0d1b2e;
+    margin-right: 0;
+    padding: 60px 60px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dark-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: var(--yellow);
+  }
+  .dark-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin-bottom: 10px;
+  }
+  .dark-heading {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .dark-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.1);
+    margin: 18px 0 30px;
+  }
+
+  /* Results at a Glance */
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    background: rgba(255,255,255,.05);
+  }
+  .result-card {
+    background: #162236;
+    padding: 28px 28px 22px;
+    border-left: 4px solid transparent;
+    transition: border-color .25s;
+    position: relative;
+  }
+  .result-card.teal { border-left-color: #4ecdc4; }
+  .result-card.gold { border-left-color: var(--yellow); }
+  .result-card:hover { background: #1c2d44; }
+  .result-card .rval {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .result-card.teal .rval { color: #4ecdc4; }
+  .result-card.gold .rval { color: var(--yellow); }
+  .result-card .rtitle { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .result-card .rsub { font-size: 12px; color: #6b8aaa; }
+
+  /* SEO Performance dark */
+  .seo-perf-info {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    padding: 12px 20px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #6b8aaa;
+    font-style: italic;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .seo-perf-info span::before { content: '• '; color: var(--yellow); }
+  .seo-kw-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    background: rgba(255,255,255,.05);
+    margin-bottom: 50px;
+  }
+  .seo-kw-card {
+    background: #162236;
+    padding: 20px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid transparent;
+    transition: border-color .2s, background .2s;
+  }
+  .seo-kw-card:hover { background: #1c2d44; }
+  .seo-kw-card.border-teal { border-left-color: #4ecdc4; }
+  .seo-kw-card.border-gold { border-left-color: var(--yellow); }
+  .seo-kw-card .kw-text { font-size: 14px; font-weight: 500; color: #d0dde8; }
+  .seo-kw-card .kw-sub { font-size: 11px; color: #4a6a8a; margin-top: 4px; }
+  .seo-kw-card .kw-rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    line-height: 1;
+  }
+  .seo-kw-card.border-teal .kw-rank { color: #4ecdc4; }
+  .seo-kw-card.border-gold .kw-rank { color: var(--yellow); }
+
+  /* Traffic Growth */
+  .traffic-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    background: rgba(255,255,255,.05);
+    margin-bottom: 24px;
+  }
+  .traffic-stat {
+    background: #162236;
+    padding: 20px 18px;
+    border-top: 4px solid transparent;
+  }
+  .traffic-stat:nth-child(odd) { border-top-color: #4ecdc4; }
+  .traffic-stat:nth-child(even) { border-top-color: var(--yellow); }
+  .traffic-stat .tval {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .traffic-stat:nth-child(odd) .tval { color: #4ecdc4; }
+  .traffic-stat:nth-child(even) .tval { color: var(--yellow); }
+  .traffic-stat .tlbl { font-size: 12px; color: #8aa8c2; margin-bottom: 6px; }
+  .traffic-stat .tgrowth { font-size: 13px; font-weight: 700; color: #4ecdc4; }
+  .traffic-stat:nth-child(even) .tgrowth { color: var(--yellow); }
+
+  /* Chart container */
+  .chart-wrap {
+    background: #162236;
+    padding: 24px;
+    position: relative;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+    font-size: 11px;
+    color: #6b8aaa;
+    letter-spacing: .5px;
+  }
+  .chart-legend span { display: flex; align-items: center; gap: 6px; }
+  .leg-dot { width: 12px; height: 12px; border-radius: 2px; }
+  .leg-prev { background: #2a3f56; }
+  .leg-camp { background: #4ecdc4; }
+  canvas#trafficChart { width: 100% !important; }
+
+  @media (max-width: 768px) {
+    .dark-section { padding: 40px 24px; }
+    .results-grid, .seo-kw-grid { grid-template-columns: 1fr; }
+    .traffic-stats { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .traffic-stats { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -1096,6 +1262,113 @@
     </div>
   </section>
 
+  <!-- ══════════════════ RESULTS AT A GLANCE ══════════════════ -->
+  <section id="results" class="dark-section reveal" style="margin-right:var(--rail-w);">
+    <div class="dark-label">Results at a Glance</div>
+    <div class="dark-heading">Numbers that speak for themselves.</div>
+    <div class="dark-divider"></div>
+    <div class="results-grid">
+      <div class="result-card teal reveal">
+        <div class="rval">267%</div>
+        <div class="rtitle">Growth in Website Users</div>
+        <div class="rsub">vs. previous period</div>
+      </div>
+      <div class="result-card teal reveal">
+        <div class="rval">#1</div>
+        <div class="rtitle">Google Rankings Achieved</div>
+        <div class="rsub">across 6 competitive keywords</div>
+      </div>
+      <div class="result-card gold reveal">
+        <div class="rval">11%</div>
+        <div class="rtitle">Average Click-Through Rate</div>
+        <div class="rsub">vs. 2&ndash;3% industry benchmark</div>
+      </div>
+      <div class="result-card gold reveal">
+        <div class="rval">305%</div>
+        <div class="rtitle">Growth in Engagement Events</div>
+        <div class="rsub">tracked via Google Analytics</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ SEO PERF + TRAFFIC GROWTH ══════════════════ -->
+  <section id="seo-traffic" style="margin-right:var(--rail-w);background:#0d1b2e;">
+    <!-- SEO Performance -->
+    <div class="dark-section" style="margin-right:0;border-bottom:3px solid rgba(255,255,255,.05);">
+      <div class="dark-label">SEO Performance</div>
+      <div class="dark-heading">Page 1 Google Rankings for an IT Client &mdash; Tracy &amp; Livermore, California</div>
+      <div class="dark-divider"></div>
+      <div class="seo-perf-info reveal">
+        <span>International Client</span>
+        <span>IT Managed Services Provider</span>
+        <span>Competitive US Market</span>
+        <span>Ranked within months of engagement</span>
+      </div>
+      <div class="seo-kw-grid reveal">
+        <div class="seo-kw-card border-gold">
+          <div><div class="kw-text">IT Managed Service Provider &mdash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div class="kw-rank">#2</div>
+        </div>
+        <div class="seo-kw-card border-teal">
+          <div><div class="kw-text">IT Support &mdash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div class="kw-rank">#1</div>
+        </div>
+        <div class="seo-kw-card border-gold">
+          <div><div class="kw-text">Managed IT Services &mdash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div class="kw-rank">#2</div>
+        </div>
+        <div class="seo-kw-card border-gold">
+          <div><div class="kw-text">Managed IT Support &mdash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+          <div class="kw-rank">#2</div>
+        </div>
+        <div class="seo-kw-card border-teal">
+          <div><div class="kw-text">IT Services &mdash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
+          <div class="kw-rank">#1</div>
+        </div>
+        <div class="seo-kw-card border-teal">
+          <div><div class="kw-text">IT Support Services &mdash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
+          <div class="kw-rank">#1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Website Traffic Growth -->
+    <div class="dark-section" style="margin-right:0;">
+      <div class="dark-label">Website Traffic Growth</div>
+      <div class="dark-heading">Google Analytics &mdash; Campaign Performance Snapshot</div>
+      <div class="dark-divider"></div>
+      <div class="traffic-stats reveal">
+        <div class="traffic-stat">
+          <div class="tval">1.5K</div>
+          <div class="tlbl">Active Users</div>
+          <div class="tgrowth">+267%</div>
+        </div>
+        <div class="traffic-stat">
+          <div class="tval">20K</div>
+          <div class="tlbl">Events Tracked</div>
+          <div class="tgrowth">+305%</div>
+        </div>
+        <div class="traffic-stat">
+          <div class="tval">6.9K</div>
+          <div class="tlbl">Total Page Views</div>
+          <div class="tgrowth">+299%</div>
+        </div>
+        <div class="traffic-stat">
+          <div class="tval">62</div>
+          <div class="tlbl">Purchases / Conversions</div>
+          <div class="tgrowth">+210%</div>
+        </div>
+      </div>
+      <div class="chart-wrap reveal">
+        <div class="chart-legend">
+          <span><div class="leg-dot leg-prev"></div> Previous Period</span>
+          <span><div class="leg-dot leg-camp"></div> Campaign Period</span>
+        </div>
+        <canvas id="trafficChart" height="220"></canvas>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════════════ CONTACT ══════════════════ -->
   <section id="contact" class="section-card">
     <div class="sidebar">
@@ -1150,6 +1423,7 @@
   © 2026 <span>Dinkal Shah</span> · Digital Marketing Consultant · All Rights Reserved
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
@@ -1174,6 +1448,59 @@
     navLinks.forEach(a => {
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
+  });
+
+  // Traffic Chart
+  const ctx = document.getElementById('trafficChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Active Users', 'Event Count', 'Page Views', 'Purchases'],
+      datasets: [
+        {
+          label: 'Previous Period',
+          data: [410, 4900, 1720, 20],
+          backgroundColor: '#2a3f56',
+          borderRadius: 3,
+          borderSkipped: false,
+        },
+        {
+          label: 'Campaign Period',
+          data: [1500, 20000, 6900, 62],
+          backgroundColor: '#4ecdc4',
+          borderRadius: 3,
+          borderSkipped: false,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0d1b2e',
+          titleColor: '#fff',
+          bodyColor: '#4ecdc4',
+          borderColor: 'rgba(78,205,196,.3)',
+          borderWidth: 1,
+          padding: 10,
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,.04)' },
+          ticks: { color: '#6b8aaa', font: { size: 11 } },
+          border: { color: 'rgba(255,255,255,.08)' }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,.04)' },
+          ticks: { color: '#6b8aaa', font: { size: 11 } },
+          border: { color: 'rgba(255,255,255,.08)' }
+        }
+      },
+      animation: { duration: 1200, easing: 'easeOutQuart' }
+    }
   });
 </script>
 </body>
