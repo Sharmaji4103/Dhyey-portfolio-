@@ -137,6 +137,31 @@
   footer { background: var(--black); color: #555; text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 18px; margin-right: var(--rail-w); }
   footer span { color: var(--yellow); }
 
+  /* ── Inline sections with sidebar ── */
+  .section-card-inline {
+    background: var(--white);
+    display: flex;
+    min-height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .yellow-section-inner {
+    flex: 1;
+    padding: 50px 50px 50px 44px;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid var(--yellow);
+  }
+  .yellow-section-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: var(--black);
+  }
+
+  /* Legacy standalone yellow-section (kept for any remaining uses) */
   .yellow-section {
     background: var(--white);
     margin-right: 0;
@@ -152,6 +177,7 @@
     width: 5px; height: 100%;
     background: var(--black);
   }
+
   .ys-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--dark-gray); margin-bottom: 10px; }
   .ys-heading { font-family: 'DM Sans', sans-serif; font-size: clamp(20px, 3vw, 30px); font-weight: 700; color: var(--black); margin-bottom: 6px; line-height: 1.25; }
   .ys-divider { width: 100%; height: 2px; background: var(--yellow); margin: 18px 0 30px; }
@@ -199,6 +225,9 @@
   .leg-camp { background: var(--yellow); }
   canvas#trafficChart { width: 100% !important; }
 
+  /* Divider between inline sub-sections */
+  .inner-divider { height: 6px; background: #e8e8e8; margin: 0; }
+
   @media (max-width: 768px) {
     :root { --sidebar-w: 0px; }
     .sidebar { display: none; }
@@ -208,6 +237,7 @@
     .section-body { padding: 30px 20px; }
     .hero-content { padding: 40px 24px; }
     .yellow-section { padding: 40px 24px; }
+    .yellow-section-inner { padding: 30px 20px; }
     .results-grid, .seo-kw-grid { grid-template-columns: 1fr; }
     .traffic-stats { grid-template-columns: 1fr 1fr; }
   }
@@ -475,6 +505,8 @@
         <div class="section-heading">PORTFOLIO</div>
         <p class="section-sub">Featured projects &amp; real-world results</p>
       </div>
+
+      <!-- Social Media Management -->
       <div class="project-section-title reveal">Social Media Management</div>
       <div class="smm-grid reveal">
         <div class="smm-card">
@@ -493,11 +525,14 @@
         </div>
         <div class="smm-card" style="background:var(--yellow);">
           <div class="smm-icon" style="background:var(--black);">&#128200;</div>
-          <h4 style="color:var(--black);">LinkedIn Growth</h4>
-          <div class="smm-niche" style="color:rgba(0,0,0,.5);">Across Managed Pages</div>
-          <p style="color:rgba(0,0,0,.7);">Generated <strong>400+</strong> new followers and <strong>35%</strong> engagement boost across managed LinkedIn pages within months.</p>
+          <h4 style="color:var(--black);">Krisia The Label</h4>
+          <div class="smm-niche" style="color:rgba(0,0,0,.5);">FASHION INDUSTRY</div>
+          <p style="color:rgba(0,0,0,.7);">Managed<strong>Instagram</strong>presence with visually consistent, brand-aligned content to strengthen audience engagement and overall social presence.</p>
+		  <a href="https://www.instagram.com/krisiathelabel/" target="_blank">View Profile &rarr;</a>
         </div>
       </div>
+
+      <!-- SEO Performance – Google Rankings -->
       <div class="project-section-title reveal">SEO Performance &ndash; Google Rankings</div>
       <div class="seo-grids reveal">
         <div class="seo-block">
@@ -514,6 +549,107 @@
           <div class="rank-row"><span class="rank-kw">synthetic diamond manufacturing machine</span><span class="rank-badge p2">#11 Page 2</span></div>
         </div>
       </div>
+
+      <!-- ── Results at a Glance (moved here, inline) ── -->
+      <div class="project-section-title reveal">Results at a Glance</div>
+      <div style="margin-bottom:6px;" class="reveal">
+        <p style="font-size:13px;color:#666;margin-bottom:18px;">Numbers that speak for themselves.</p>
+        <div class="results-grid" style="margin-bottom:30px;">
+          <div class="result-card accent-yellow">
+            <div class="rval">267%</div>
+            <div class="rtitle">Growth in Website Users</div>
+            <div class="rsub">vs. previous period</div>
+          </div>
+          <div class="result-card accent-black">
+            <div class="rval">#1</div>
+            <div class="rtitle">Google Rankings Achieved</div>
+            <div class="rsub">across 6 competitive keywords</div>
+          </div>
+          <div class="result-card accent-yellow">
+            <div class="rval">7%</div>
+            <div class="rtitle">Average Click-Through Rate</div>
+            <div class="rsub">vs. 2&ndash;3% industry benchmark</div>
+          </div>
+          <div class="result-card accent-black">
+            <div class="rval">305%</div>
+            <div class="rtitle">Growth in Engagement Events</div>
+            <div class="rsub">tracked via Google Analytics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SEO Performance IT Client (moved here, inline) ── -->
+      <div class="project-section-title reveal">SEO Performance &ndash; Page 1 Google Rankings for an IT Client</div>
+      <div class="reveal">
+        <div class="seo-perf-info" style="margin-bottom:16px;">
+          <span>International Client</span>
+          <span>IT Managed Services Provider</span>
+          <span>Competitive US Market</span>
+          <span>Ranked within months of engagement</span>
+        </div>
+        <div class="seo-kw-grid" style="margin-bottom:30px;">
+          <div class="seo-kw-card border-yellow">
+            <div><div class="kw-text">IT Managed Service Provider &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+            <div class="kw-rank">#2</div>
+          </div>
+          <div class="seo-kw-card border-black">
+            <div><div class="kw-text">IT Support &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+            <div class="kw-rank">#1</div>
+          </div>
+          <div class="seo-kw-card border-yellow">
+            <div><div class="kw-text">Managed IT Services &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+            <div class="kw-rank">#2</div>
+          </div>
+          <div class="seo-kw-card border-yellow">
+            <div><div class="kw-text">Managed IT Support &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
+            <div class="kw-rank">#2</div>
+          </div>
+          <div class="seo-kw-card border-black">
+            <div><div class="kw-text">IT Services &ndash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
+            <div class="kw-rank">#1</div>
+          </div>
+          <div class="seo-kw-card border-black">
+            <div><div class="kw-text">IT Support Services &ndash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
+            <div class="kw-rank">#1</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Website Traffic Growth (moved here, inline) ── -->
+      <div class="project-section-title reveal">Website Traffic Growth &ndash; Google Analytics Campaign Snapshot</div>
+      <div class="reveal">
+        <div class="traffic-stats" style="margin-bottom:20px;">
+          <div class="traffic-stat">
+            <div class="tval">1.5K</div>
+            <div class="tlbl">Active Users</div>
+            <div class="tgrowth">+267%</div>
+          </div>
+          <div class="traffic-stat">
+            <div class="tval">20K</div>
+            <div class="tlbl">Events Tracked</div>
+            <div class="tgrowth">+305%</div>
+          </div>
+          <div class="traffic-stat">
+            <div class="tval">6.9K</div>
+            <div class="tlbl">Total Page Views</div>
+            <div class="tgrowth">+299%</div>
+          </div>
+          <div class="traffic-stat">
+            <div class="tval">62</div>
+            <div class="tlbl">Purchases / Conversions</div>
+            <div class="tgrowth">+210%</div>
+          </div>
+        </div>
+        <div class="chart-wrap" style="margin-bottom:30px;">
+          <div class="chart-legend">
+            <span><div class="leg-dot leg-prev"></div> Previous Period</span>
+            <span><div class="leg-dot leg-camp"></div> Campaign Period</span>
+          </div>
+          <canvas id="trafficChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <!-- Paid Advertising Case Studies -->
       <div class="project-section-title reveal">Paid Advertising Case Studies</div>
       <div class="ads-grid reveal">
         <div class="ads-card">
@@ -541,112 +677,7 @@
           <p style="font-size:11px;margin-top:10px;color:#666;">Total clicks: <strong>13,000+</strong> with high reach &amp; engagement at cost-efficient CPI</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- RESULTS AT A GLANCE -->
-  <section id="results" class="yellow-section reveal" style="margin-right:var(--rail-w);">
-    <div class="ys-label">Results at a Glance</div>
-    <div class="ys-heading">Numbers that speak for themselves.</div>
-    <div class="ys-divider"></div>
-    <div class="results-grid">
-      <div class="result-card accent-yellow reveal">
-        <div class="rval">267%</div>
-        <div class="rtitle">Growth in Website Users</div>
-        <div class="rsub">vs. previous period</div>
-      </div>
-      <div class="result-card accent-black reveal">
-        <div class="rval">#1</div>
-        <div class="rtitle">Google Rankings Achieved</div>
-        <div class="rsub">across 6 competitive keywords</div>
-      </div>
-      <div class="result-card accent-yellow reveal">
-        <div class="rval">7%</div>
-        <div class="rtitle">Average Click-Through Rate</div>
-        <div class="rsub">vs. 2&ndash;3% industry benchmark</div>
-      </div>
-      <div class="result-card accent-black reveal">
-        <div class="rval">305%</div>
-        <div class="rtitle">Growth in Engagement Events</div>
-        <div class="rsub">tracked via Google Analytics</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO PERFORMANCE + TRAFFIC GROWTH -->
-  <section id="seo-traffic" style="margin-right:var(--rail-w);background:#F4F4F4;">
-    <div class="yellow-section" style="margin-right:0;border-bottom:3px solid #e0e0e0;">
-      <div class="ys-label">SEO Performance</div>
-      <div class="ys-heading">Page 1 Google Rankings for an IT Client &ndash; Tracy &amp; Livermore, California</div>
-      <div class="ys-divider"></div>
-      <div class="seo-perf-info reveal">
-        <span>International Client</span>
-        <span>IT Managed Services Provider</span>
-        <span>Competitive US Market</span>
-        <span>Ranked within months of engagement</span>
-      </div>
-      <div class="seo-kw-grid reveal">
-        <div class="seo-kw-card border-yellow">
-          <div><div class="kw-text">IT Managed Service Provider &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
-          <div class="kw-rank">#2</div>
-        </div>
-        <div class="seo-kw-card border-black">
-          <div><div class="kw-text">IT Support &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
-          <div class="kw-rank">#1</div>
-        </div>
-        <div class="seo-kw-card border-yellow">
-          <div><div class="kw-text">Managed IT Services &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
-          <div class="kw-rank">#2</div>
-        </div>
-        <div class="seo-kw-card border-yellow">
-          <div><div class="kw-text">Managed IT Support &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
-          <div class="kw-rank">#2</div>
-        </div>
-        <div class="seo-kw-card border-black">
-          <div><div class="kw-text">IT Services &ndash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
-          <div class="kw-rank">#1</div>
-        </div>
-        <div class="seo-kw-card border-black">
-          <div><div class="kw-text">IT Support Services &ndash; Livermore</div><div class="kw-sub">Google Page 1</div></div>
-          <div class="kw-rank">#1</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Website Traffic Growth -->
-    <div class="yellow-section" style="margin-right:0;">
-      <div class="ys-label">Website Traffic Growth</div>
-      <div class="ys-heading">Google Analytics &ndash; Campaign Performance Snapshot</div>
-      <div class="ys-divider"></div>
-      <div class="traffic-stats reveal">
-        <div class="traffic-stat">
-          <div class="tval">1.5K</div>
-          <div class="tlbl">Active Users</div>
-          <div class="tgrowth">+267%</div>
-        </div>
-        <div class="traffic-stat">
-          <div class="tval">20K</div>
-          <div class="tlbl">Events Tracked</div>
-          <div class="tgrowth">+305%</div>
-        </div>
-        <div class="traffic-stat">
-          <div class="tval">6.9K</div>
-          <div class="tlbl">Total Page Views</div>
-          <div class="tgrowth">+299%</div>
-        </div>
-        <div class="traffic-stat">
-          <div class="tval">62</div>
-          <div class="tlbl">Purchases / Conversions</div>
-          <div class="tgrowth">+210%</div>
-        </div>
-      </div>
-      <div class="chart-wrap reveal">
-        <div class="chart-legend">
-          <span><div class="leg-dot leg-prev"></div> Previous Period</span>
-          <span><div class="leg-dot leg-camp"></div> Campaign Period</span>
-        </div>
-        <canvas id="trafficChart" height="220"></canvas>
-      </div>
     </div>
   </section>
 
