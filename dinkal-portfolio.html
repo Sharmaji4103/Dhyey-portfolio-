@@ -137,51 +137,6 @@
   footer { background: var(--black); color: #555; text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 18px; margin-right: var(--rail-w); }
   footer span { color: var(--yellow); }
 
-  /* ── Inline sections with sidebar ── */
-  .section-card-inline {
-    background: var(--white);
-    display: flex;
-    min-height: auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .yellow-section-inner {
-    flex: 1;
-    padding: 50px 50px 50px 44px;
-    position: relative;
-    overflow: hidden;
-    border-top: 5px solid var(--yellow);
-  }
-  .yellow-section-inner::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 5px; height: 100%;
-    background: var(--black);
-  }
-
-  /* Legacy standalone yellow-section (kept for any remaining uses) */
-  .yellow-section {
-    background: var(--white);
-    margin-right: 0;
-    padding: 60px 60px 60px 60px;
-    position: relative;
-    overflow: hidden;
-    border-top: 5px solid var(--yellow);
-  }
-  .yellow-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 5px; height: 100%;
-    background: var(--black);
-  }
-
-  .ys-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--dark-gray); margin-bottom: 10px; }
-  .ys-heading { font-family: 'DM Sans', sans-serif; font-size: clamp(20px, 3vw, 30px); font-weight: 700; color: var(--black); margin-bottom: 6px; line-height: 1.25; }
-  .ys-divider { width: 100%; height: 2px; background: var(--yellow); margin: 18px 0 30px; }
-
   .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #e0e0e0; }
   .result-card { background: var(--white); padding: 28px 28px 22px; border-left: 4px solid transparent; transition: border-color .25s, background .2s; position: relative; }
   .result-card.accent-yellow { border-left-color: var(--yellow); }
@@ -195,7 +150,7 @@
 
   .seo-perf-info { background: var(--gray); border: 1px solid #e0e0e0; border-left: 4px solid var(--yellow); padding: 12px 20px; font-size: 12px; color: #555; font-style: italic; margin-bottom: 20px; display: flex; gap: 16px; flex-wrap: wrap; }
   .seo-perf-info span::before { content: '\2022 '; color: var(--yellow); }
-  .seo-kw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #e0e0e0; margin-bottom: 50px; }
+  .seo-kw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #e0e0e0; margin-bottom: 30px; }
   .seo-kw-card { background: var(--white); padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid transparent; transition: border-color .2s, background .2s; }
   .seo-kw-card:hover { background: var(--gray); }
   .seo-kw-card.border-yellow { border-left-color: var(--yellow); }
@@ -225,9 +180,6 @@
   .leg-camp { background: var(--yellow); }
   canvas#trafficChart { width: 100% !important; }
 
-  /* Divider between inline sub-sections */
-  .inner-divider { height: 6px; background: #e8e8e8; margin: 0; }
-
   @media (max-width: 768px) {
     :root { --sidebar-w: 0px; }
     .sidebar { display: none; }
@@ -236,8 +188,6 @@
     .smm-grid { grid-template-columns: 1fr 1fr; }
     .section-body { padding: 30px 20px; }
     .hero-content { padding: 40px 24px; }
-    .yellow-section { padding: 40px 24px; }
-    .yellow-section-inner { padding: 30px 20px; }
     .results-grid, .seo-kw-grid { grid-template-columns: 1fr; }
     .traffic-stats { grid-template-columns: 1fr 1fr; }
   }
@@ -527,34 +477,16 @@
           <div class="smm-icon" style="background:var(--black);">&#128200;</div>
           <h4 style="color:var(--black);">Krisia The Label</h4>
           <div class="smm-niche" style="color:rgba(0,0,0,.5);">FASHION INDUSTRY</div>
-          <p style="color:rgba(0,0,0,.7);">Managed<strong>Instagram</strong>presence with visually consistent, brand-aligned content to strengthen audience engagement and overall social presence.</p>
-		  <a href="https://www.instagram.com/krisiathelabel/" target="_blank">View Profile &rarr;</a>
+          <p style="color:rgba(0,0,0,.7);">Managed <strong>Instagram</strong> presence with visually consistent, brand-aligned content to strengthen audience engagement and overall social presence.</p>
+          <a href="https://www.instagram.com/krisiathelabel/" target="_blank">View Profile &rarr;</a>
         </div>
       </div>
 
-      <!-- SEO Performance – Google Rankings -->
-      <div class="project-section-title reveal">SEO Performance &ndash; Google Rankings</div>
-      <div class="seo-grids reveal">
-        <div class="seo-block">
-          <h4>Mobile App &ndash; Wardrobe</h4>
-          <div class="rank-row"><span class="rank-kw">best digital wardrobe 2026</span><span class="rank-badge p1">#2 Page 1</span></div>
-          <div class="rank-row"><span class="rank-kw">digitized wardrobe management</span><span class="rank-badge p1">#4 Page 1</span></div>
-          <div class="rank-row"><span class="rank-kw">digital wardrobe app</span><span class="rank-badge p2">#12 Page 2</span></div>
-          <div class="rank-row"><span class="rank-kw">best app for wardrobe management</span><span class="rank-badge p2">#12 Page 2</span></div>
-        </div>
-        <div class="seo-block">
-          <h4>Manufacturing Industry</h4>
-          <div class="rank-row"><span class="rank-kw">Precision Manufacturing in India</span><span class="rank-badge p1">#2 Page 1</span></div>
-          <div class="rank-row"><span class="rank-kw">4 axis cnc machining</span><span class="rank-badge p2">#14 Page 2</span></div>
-          <div class="rank-row"><span class="rank-kw">synthetic diamond manufacturing machine</span><span class="rank-badge p2">#11 Page 2</span></div>
-        </div>
-      </div>
-
-      <!-- ── Results at a Glance (moved here, inline) ── -->
+      <!-- ── Results at a Glance (NOW BEFORE SEO Performance – Google Rankings) ── -->
       <div class="project-section-title reveal">Results at a Glance</div>
-      <div style="margin-bottom:6px;" class="reveal">
+      <div class="reveal" style="margin-bottom:30px;">
         <p style="font-size:13px;color:#666;margin-bottom:18px;">Numbers that speak for themselves.</p>
-        <div class="results-grid" style="margin-bottom:30px;">
+        <div class="results-grid">
           <div class="result-card accent-yellow">
             <div class="rval">267%</div>
             <div class="rtitle">Growth in Website Users</div>
@@ -578,11 +510,28 @@
         </div>
       </div>
 
-      <!-- ── SEO Performance IT Client (moved here, inline) ── -->
+      <!-- SEO Performance – Google Rankings -->
+      <div class="project-section-title reveal">SEO Performance &ndash; Google Rankings</div>
+      <div class="seo-grids reveal">
+        <div class="seo-block">
+          <h4>Mobile App &ndash; Wardrobe</h4>
+          <div class="rank-row"><span class="rank-kw">best digital wardrobe 2026</span><span class="rank-badge p1">#2 Page 1</span></div>
+          <div class="rank-row"><span class="rank-kw">digitized wardrobe management</span><span class="rank-badge p1">#4 Page 1</span></div>
+          <div class="rank-row"><span class="rank-kw">digital wardrobe app</span><span class="rank-badge p2">#12 Page 2</span></div>
+          <div class="rank-row"><span class="rank-kw">best app for wardrobe management</span><span class="rank-badge p2">#12 Page 2</span></div>
+        </div>
+        <div class="seo-block">
+          <h4>Manufacturing Industry</h4>
+          <div class="rank-row"><span class="rank-kw">Precision Manufacturing in India</span><span class="rank-badge p1">#2 Page 1</span></div>
+          <div class="rank-row"><span class="rank-kw">4 axis cnc machining</span><span class="rank-badge p2">#14 Page 2</span></div>
+          <div class="rank-row"><span class="rank-kw">synthetic diamond manufacturing machine</span><span class="rank-badge p2">#11 Page 2</span></div>
+        </div>
+      </div>
+
+      <!-- SEO Performance IT Client -->
       <div class="project-section-title reveal">SEO Performance &ndash; Page 1 Google Rankings for an IT Client</div>
       <div class="reveal">
-        
-        <div class="seo-kw-grid" style="margin-bottom:30px;">
+        <div class="seo-kw-grid">
           <div class="seo-kw-card border-yellow">
             <div><div class="kw-text">IT Managed Service Provider &ndash; Tracy</div><div class="kw-sub">Google Page 1</div></div>
             <div class="kw-rank">#2</div>
@@ -610,7 +559,7 @@
         </div>
       </div>
 
-      <!-- ── Website Traffic Growth (moved here, inline) ── -->
+      <!-- Website Traffic Growth -->
       <div class="project-section-title reveal">Website Traffic Growth &ndash; Google Analytics Campaign Snapshot</div>
       <div class="reveal">
         <div class="traffic-stats" style="margin-bottom:20px;">
@@ -702,11 +651,12 @@
           <div class="contact-detail"><div class="cd-icon">&#127891;</div><div class="cd-text"><small>Education</small><span>BBA Marketing &ndash; CHARUSAT, Anand</span></div></div>
           <div class="contact-detail"><div class="cd-icon">&#128188;</div><div class="cd-text"><small>Current Role</small><span>Digital Marketing Executive @ SEO Web Planet</span></div></div>
           <div class="contact-detail"><div class="cd-icon">&#128279;</div><div class="cd-text"><small>LinkedIn</small><span>linkedin.com/in/dinkalshah</span></div></div>
+          <div class="contact-detail"><div class="cd-icon">&#9993;&#65039;</div><div class="cd-text"><small>Email</small><span><a href="mailto:dinkalshah09@gmail.com" style="color:var(--black);text-decoration:none;">dinkalshah09@gmail.com</a></span></div></div>
         </div>
         <div class="contact-cta reveal">
           <h3>BOOK A FREE CONSULTATION</h3>
           <p>Whether you need SEO, social media management, paid ads, or a complete digital strategy &mdash; let's have a conversation and see how I can help your brand grow.</p>
-          <a href="mailto:dinkal@example.com" class="btn-primary" style="align-self:flex-start;">Get In Touch</a>
+          <a href="mailto:dinkalshah09@gmail.com" class="btn-primary" style="align-self:flex-start;">Get In Touch</a>
         </div>
       </div>
     </div>
